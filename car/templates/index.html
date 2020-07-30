@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+ <meta charset="UTF-8">  
+ <title>Главная страница</title>  
+</head>  
+<body> 
+<h1 style="color: red">КАТАЛОГ АВТОМОБИЛЕЙ</h1>	 
+<form>
+
+
+    <input type="text" name="manufacturer" placeholder="производитель">
+    <input type="text" name="model" placeholder="модель">
+    <input type="number" name="year" placeholder="год выпуска">
+    <select name="kpp">
+      <option value="" selected>Выберите коробку</option>
+      <option value="0">Механика</option>
+      <option value="1">Автомат</option>
+      <option value="2">Робот</option>
+    </select>
+    <input type="text" name="color" placeholder="цвет">
+    <input type="submit">
+
+
+</form>
+<div>
+<h>ЗАПРОС:{{ cars3 }}<h> 
+
+<h1 &#128269 style="color:blue">НАЙДЕННЫЕ АВТОМОБИЛИ</h1>	
+{% for i in cars1 %}
+     <h2>&#128270;{{ i }} <br></h2>
+{% endfor %}
+</div>
+<HR NOSHADE WIDTH="100% СOLOR="Blue" SIZE="8">
+<div>
+<h1>СПИСОК ВСЕХ АВТОМОБИЛЕЙ </h1>	
+{% for i in cars %}
+    <h2>Марка:{{ i.manufacturer }} модель:{{ i.model }} год выпуска:{{ i.year }} цвет:{{ i.color }} коробка:{{ i.kpp }}<h2>
+{% endfor %}
+</div>            
+</body>  
+</html>
